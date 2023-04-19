@@ -1,9 +1,10 @@
 #ifndef FRACTION_A_FRACTION_HPP
 #define FRACTION_A_FRACTION_HPP
+
 #include <iostream>
 #include <string>
-using namespace std;
 
+const static double tenth = 0.1;
 namespace ariel {
 
     class Fraction {
@@ -11,24 +12,53 @@ namespace ariel {
         int denominator;
 
     public:
-        Fraction(int numerator, int denominator);
-        Fraction(Fraction fraction);
+        Fraction(int numerator = 0, int denominator = 1);
 
-        Fraction operator+ (Fraction a ,Fraction b);
-        Fraction operator- (Fraction a ,Fraction b);
-        Fraction operator* (Fraction a ,Fraction b);
-        Fraction operator/ (Fraction a ,Fraction b);
-        bool operator== (Fraction a ,Fraction b);
-        bool operator>= (Fraction a ,Fraction b);
-        bool operator<= (Fraction a ,Fraction b);
-        bool operator< (Fraction a ,Fraction b);
-        bool operator> (Fraction a ,Fraction b);
-        void operator<< (ostream& COUT ,Fraction fraction);
-        void operator>> (ostream& COUT ,Fraction fraction);
+        Fraction();
 
+//        Fraction(const Fraction &fraction);
+//
+        Fraction(double num = tenth);
 
+        int getDenominator() const;
 
+        friend Fraction operator+(const Fraction &fraction1, const Fraction &fraction2);
 
+        friend Fraction operator-(const Fraction &fraction1, const Fraction &fraction2);
+
+        friend Fraction operator*(const Fraction &fraction1, const Fraction &fraction2);
+
+        friend Fraction operator/(const Fraction &fraction1, const Fraction &fraction2);
+
+        friend bool operator==(const Fraction &fraction1, const Fraction &fraction2);
+
+        friend bool operator>=(const Fraction &fraction1, const Fraction &fraction2);
+
+        friend bool operator<=(const Fraction &fraction1, const Fraction &fraction2);
+
+        friend bool operator!=(const Fraction &fraction1, const Fraction &fraction2);
+
+        friend bool operator<(const Fraction &fraction1, const Fraction &fraction2);
+
+        int getNumerator() const;
+
+        friend bool operator>(const Fraction &fraction1, const Fraction &fraction2);
+
+        friend std::ostream &operator<<(std::ostream &osStream, const Fraction &fraction);
+
+        friend std::istream &operator>>(std::istream &input, Fraction fraction);
+
+        // prefix increment:
+        Fraction &operator++();
+
+        // postfix increment:
+        const Fraction operator++(int);
+
+        // prefix decrement:
+        Fraction &operator--();
+
+        // postfix decrement:
+        const Fraction operator--(int);
 
 
     };
