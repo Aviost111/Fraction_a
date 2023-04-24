@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-const static double tenth = 0.1;
+const static float tenth = 0.1;
 namespace ariel {
 
     class Fraction {
@@ -12,13 +12,13 @@ namespace ariel {
         int denominator;
 
     public:
-        Fraction(int numerator = 0, int denominator = 1);
+        explicit Fraction(int numerator = 0, int denominator = 1);
 
         Fraction();
 
 //        Fraction(const Fraction &fraction);
 //
-        Fraction(double num = tenth);
+        Fraction(float num = tenth);
 
         int getDenominator() const;
 

@@ -6,7 +6,7 @@ namespace ariel {
     Fraction::Fraction(int numerator, int denominator) : numerator(numerator), denominator(denominator) {}
 
 //    Fraction::Fraction(const Fraction &fraction) {}
-    Fraction::Fraction(double num) {}
+    Fraction::Fraction(float num) {}
 
     Fraction::Fraction() {}
 
