@@ -39,7 +39,7 @@ TEST_CASE("comparing") {
 //10
 TEST_CASE("addition ++ and subtraction --") {
     Fraction a(1, 1);
-    Fraction b(2, 2);
+    Fraction b(2, 1);
     CHECK(((a++) != b));
     CHECK((a == b));
     a--;
